@@ -1,162 +1,238 @@
 /* Import Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
 
 /* Your CSS styles go here */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    /* Additional styles */
 }
-body{
+
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #4d59fb;
-
+    background: #ffb6c1; /* Peach background color */
+    flex-direction: column; /* Added to center items vertically */
 }
-.wrapper{
-    width: 420px;
-    background: #fff;
+
+.container {
+    display: flex;
+    flex-direction: column; /* Added to stack items vertically */
+    align-items: center; /* Center items horizontally */
+    max-width: 600px; /* Optional: Adjust max-width to your preference */
+    margin: 40px auto 20px; /* Center the container horizontally and adjust top and bottom margins */
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 30px; /* Increase spacing between h1 and other content */
+    font-style: italic; /* Set font style to italic */
+    font-family: 'italic'; /* Specify the desired font family */
+}
+
+.left {
+    flex: 1;
+    padding: 20px;
+}
+
+.right {
+    flex: 1;
+    padding: 20px;
+}
+
+.image-container {
+    max-width: 500px; /* Set the maximum width for the image container */
+    height: 500px; /* Set the fixed height for the image container */
+    overflow: hidden; /* Hide any overflow content if the image exceeds container dimensions */
+    margin-right: 590px;
+}
+
+#search-result {
+    width: 100%; /* Make the image fill the entire width of the container */
+    height: 100%; /* Make the image fill the entire height of the container */
+    object-fit: cover; /* Ensure the image covers the entire container without stretching */
+    margin-right: 590px;
+}
+
+.wrapper {
+    background: #ffb6c1; /* Peach background color */
     border-radius: 7px;
     padding: 28px 28px 45px;
-
+    width: 670px; /* Adjust the width of the wrapper to your preference */
+    margin-left: 90px; /* Add a margin to separate it from the image-container */
+    position: absolute; /* Position the wrapper absolutely */
+    top: 350px; /* Align the wrapper to the top of its container */
+    right: 20px; /* Adjust the distance from the right side */
 }
-.wrapper header {
-    font-size: 28px;
-    font-weight: 500;
-    text-align: center;
 
-}
-.wrapper .search{
+
+.search {
+    display: flex;
+    align-items: center;
     position: relative;
-    margin: 35px 0 18px;
+    margin-bottom: 30px; /* Adjust margin as needed */
 }
-.search input{
-    height: 53px;
-    width: 100%;
+.search input {
+    flex: 1;
+    height: 2px; /* Set the height of the line */
+    border: none;
+    border-bottom: 2px solid #999; /* Set the line color and thickness */
     outline: none;
     font-size: 16px;
-    padding: 0 42px;
-    border-radius: 5px;
-    border: 1px solid #999;
-}
-.search input:focus{
-    padding: 0 41px;
-    border: 2px solid #4d59fb;
-}
-.search input::placeholder{
-    color: #b8b8b8;
-}
-.search :where(i, span){
-    position: absolute;
-    top: 50%;
-    color: #999;
-    transform: translateY(-50%);
-}
-.search i{
-    left: 18px;
-    font-size: 16px;
-    pointer-events: none;
+    padding: 10px; /* Adjust padding for the input */
+    background: #ffb6c1;
+    width: 450px; /* Set input width to 100% */
+    font-family: "Lucida Console", "Courier New", monospace; /* Apply Poppins font family to specific elements */
+
 
 }
-.search input:focus ~ i{
-    color: #4d59fb;
+
+
+
+.search input::placeholder {
+    color: #0a0a0a ;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5; /* Set placeholder opacity */
+    font-family: "Lucida Console", "Courier New", monospace; /* Apply Poppins font family to specific elements */
+
 }
-.search span{
-    right: 15px;
-    font-size: 18px;
-    cursor: pointer;
+
+.search span {
     display: none;
 }
-.search input:valid ~ span{
+
+.search input:focus {
+    border-bottom: 2px solid  #6d6a6a; /* Change line color on focus */
+    transition: border-bottom-color 0.3s ease; /* Add transition effect */
+}
+
+.search input:valid ~ span {
     display: block;
 }
-.wrapper .info-text{
-    font-size: 13px;
-    color: #9a9a9a;
+
+.wrapper .info-text {
+    font-size: 16px;
+    color: #0a0a0a;
     margin: -3px 0 -10px;
+    font-family: "Lucida Console", "Courier New", monospace; /* Apply Poppins font family to specific elements */
+
 }
-.wrapper.active .info-text{
+
+.wrapper.active .info-text {
     display: none;
 }
-.info-text span{
+
+.info-text span {
     font-weight: 500;
 }
-.wrapper ul{
+
+.wrapper ul {
     height: 0;
     opacity: 0;
     overflow: hidden;
     transition: all 0.2s ease;
 }
-.wrapper.active ul{
+
+.wrapper.active ul {
     height: 303px;
     opacity: 1;
 }
 
-.wrapper ul li{
-display: flex;
-align-items: center;
-margin-bottom: 14px;
-padding-bottom: 17px;
-justify-content: space-between;
-border-bottom: 1px solid #ccc;
-
+.wrapper ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 17px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
 }
-ul li:last-child{
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    border-bottom: 0px;
+
+ul li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
 }
 ul .word p{
-    font-size: 22px;
-    font-weight: 500;
-
+    font-size: 75px;
+    font-style: bold;
 }
-ul .word span{
-    font-size: 12px;
-    color: #989898;
-
+ul .word p,
+ul .word span,
+.content li .details p,
+.content li .details span,
+.details .list span {
+    font-family: "Lucida Console", "Courier New", monospace; /* Apply Poppins font family to specific elements */
 }
-ul .word i{
+
+ul .word i {
     cursor: pointer;
     font-size: 15px;
-    color:#999;
+    color: #999;
+}
 
-}
 ul .content {
-    max-height: 215px; /* Set the maximum height */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding-right: 10px; /* Add padding to avoid scrollbar overlay */
+    max-height: 215px;
+    overflow-y: auto;
+    padding-right: 10px;
 }
-ul .content::-webkit-scrollbar{
-    width: 0px;
-    
+
+ul .content::-webkit-scrollbar {
+    width: 0;
 }
-.content li .details{
+
+.content li .details {
     padding-left: 10px;
     border-radius: 4px 0 0 4px;
-    border-left: 3px solid #4d59fb;
+    border-left: 3px solid #ffb6c1;
+}
 
-}
-.content li .details p{
-    font-size: 17px;
-    font-weight: 500;
-}
-.content li .details span{
-    font-size: 15px;
-    font-weight: 500;
-    color: #7e7e7e;
-}
-.synonyms .details .list{
+.details .list {
     display: flex;
     flex-wrap: wrap;
 }
-.synonyms .details .list span{
+
+.details .list span {
     cursor: pointer;
     margin-right: 5px;
     text-decoration: underline;
-    
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    font-family: "Lucida Console", "Courier New", monospace; /* Apply Poppins font family to specific elements */
+    font-size: 0.5rem;
+    color: #0a0a0a;
+    font-weight: 600;
+    text-align: center; /* Align text at the center */
+    padding: 10px 0; /* Add padding for better visibility */
+    z-index: 9999; /* Ensure the footer is above other content */
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .image-container {
+        max-width: 100%; /* Set image container width to 100% on smaller screens */
+    }
+
+    .wrapper {
+        max-width: 100%; /* Set wrapper width to 100% on smaller screens */
+    }
+
+    .footer {
+        position: static; /* Remove fixed positioning on smaller screens */
+        width: 100%; /* Occupy full width */
+        margin-top: 20px; /* Add margin to separate it from the wrapper */
+    }
 }
