@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchResult = document.getElementById("search-result");
     const imageContainer = document.getElementById("image-container");
     const wrapper = document.querySelector(".wrapper");
+    const width = 360; // Width of the desired image
+    const height = 360; // Height of the desired image
 
     // Function to fetch a random image from Unsplash
     async function fetchRandomImage() {

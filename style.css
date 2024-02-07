@@ -1,3 +1,4 @@
+
 /* Import Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
@@ -216,18 +217,24 @@ ul .content::-webkit-scrollbar {
     padding: 10px 0; /* Add padding for better visibility */
     z-index: 9999; /* Ensure the footer is above other content */
 }
-
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column; /* Stack items vertically on smaller screens */
+@media (max-width: 950px) {
+    /* Add your CSS rules for smaller screens here */
+    body {
+        align-items: center; /* Center items vertically */
     }
 
-    .image-container {
-        max-width: 100%; /* Set image container width to 100% on smaller screens */
+    .container {
+        max-width: 100%; /* Set container width to 100% on smaller screens */
     }
 
     .wrapper {
         max-width: 100%; /* Set wrapper width to 100% on smaller screens */
+        width: 90%; /* Adjust the width of the wrapper */
+        margin: 20px auto; /* Center the wrapper horizontally */
+        position: static; /* Reset position */
+        left: 0; /* Reset left positioning */
+        right: 0; /* Reset right positioning */
+        top: auto; /* Reset top positioning */
     }
 
     .footer {
